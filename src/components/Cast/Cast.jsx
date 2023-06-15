@@ -1,15 +1,13 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import API_KEY from 'components/constants';
-import { getData } from 'api/defaultApi';
+
+import { getData } from '../../api/Api';
 
 const Cast = () => {
   const [cast, setCast] = useState([]);
   const { movieId } = useParams();
 
-  const CAST_URL = `3/movie/${Number(
-    movieId
-  )}/credits?api_key=${API_KEY}&language=en-US`;
+  const CAST_URL = `3/movie/${Number(movieId)}/credits`;
 
   useEffect(() => {
     getData(CAST_URL)
@@ -26,9 +24,10 @@ const Cast = () => {
       {cast.map(actor => {
         const { id, profile_path, name, character } = actor;
         const imageFilm = `http://image.tmdb.org/t/p/w200/${profile_path}`;
+
         return (
           <li key={id}>
-            <img src={imageFilm} alt={name}></img>
+            <img src={imageFilm} alt={name} />
             <div>
               <p>Name: {name}</p>
               <p>Character: {character}</p>

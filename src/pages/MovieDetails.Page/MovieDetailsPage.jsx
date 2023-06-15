@@ -1,7 +1,7 @@
 import { useRef, Suspense } from 'react';
 import { Link, useLocation, Outlet } from 'react-router-dom';
 import { BsBoxArrowLeft } from 'react-icons/bs';
-import useMovieDetails from 'hooks/useMovieDetails';
+import useMovieDetails from '../../hooks/useMovieDetails';
 import defaultImg from '../../images/default_image.jpg';
 import css from './MovieDetailsPage.module.css';
 
@@ -49,10 +49,10 @@ const MovieDetailsPage = () => {
       <div>
         <h4>Additional information</h4>
         <ul>
-          <li key={1}>
+          <li>
             <Link to="cast">Cast</Link>
           </li>
-          <li key={2}>
+          <li>
             <Link to="reviews">Reviews</Link>
           </li>
         </ul>

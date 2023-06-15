@@ -1,6 +1,6 @@
 import { useLocation, Link } from 'react-router-dom';
 import { BiSearch } from 'react-icons/bi';
-import useMovies from 'hooks/useMovies';
+import useMovies from '../../hooks/useMovies';
 import css from './MoviesPage.module.css';
 
 const MoviesPage = () => {
